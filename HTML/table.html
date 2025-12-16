@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블 예제</title>
+</head>
+<body>
+
+<h1>테이블 표현 (HTML5에서도 데이터 표에는 table 사용)</h1>
+
+<table border="1">
+    <td colspan="2">
+    <thead>
+        <tr>
+            <th>학생이름</th>
+            <th>평균점수</th>
+            <th>등수</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>홍길동</td>
+            <td>95점</td>
+            <td>1등</td>
+        </tr>
+        <tr>
+            <td>이순신</td>
+            <td>94점</td>
+            <td>2등</td>
+        </tr>
+        <tr>
+            <td>전두환</td>
+            <td>93점</td>
+            <td>3등</td>
+        </tr>
+        
+        <tr>
+            <td>김두한</td>
+            <td>9점</td>
+            <td>999등</td>
+        </tr>
+
+
+        
+        
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td colspan="3">이 표는 학생들의 성적을 나타낸 표입니다.</td>
+        </tr>
+    </tfoot>
+</table>
+<table border="1">
+
+    <tr>
+        <td colspan="2">2개 열 병합</td>
+        
+    </tr>
+    <tr>
+        <td rowspan="2">2개의 열 병합</td>
+        <td>일반셀2</td>
+    </tr>
+    <tr>
+        <td>일반셀3</td>
+</table>
+
+</body>
+</html>
