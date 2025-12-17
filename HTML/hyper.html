@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+<header>
+    <h1>Hyperlinks in HTML</h1>
+
+    <!-- 네비게이션 영역 -->
+    <nav>
+        <a href="http://www.naver.com">네이버</a> |
+        <a href="mailto:abc@naver.com">메일 보내기</a> |
+        <a href="#12">12로 이동</a> |
+        <a href="javascript:myclick()">JS 실행</a>
+    </nav>
+</header>
+
+<p id="1">1</p>
+<p id="2">2</p>
+<p id="3">3</p>
+<p id="4">4</p>
+<p id="5">5</p>
+<p id="6">6</p>
+<p id="7">7</p>
+
+<img src="gachi.png" alt="까치" width="50%" />
+
+<p id="8">8</p>
+<p id="9">9</p>
+<p id="10">10</p>
+<p id="11">11</p>   
+<p id="12">12</p>
+
+<p id="13">
+    <canvas id="c" width="400" height="300" style="border:1px solid #000;"></canvas>
+</p>
+
+<script>
+  const c = document.getElementById("c");
+  const ctx = c.getContext("2d");
+
+  let drawing = false;
+
+  c.onmousedown = () => drawing = true;
+  c.onmouseup   = () => drawing = false;
+  c.onmousemove = (e) => {
+    if (!drawing) return;
+    ctx.fillStyle = "black";
+    ctx.beginPath();
+    ctx.arc(e.offsetX, e.offsetY, 2, 0, Math.PI * 2);
+    ctx.fill();
+  };
+</script>
+
+<p id="14">14</p>
+
+
+<blockquote cite="http://www.worldwildlife.org/who/index.html">
+<p style="color:DodgerBlue;">For 60 years, WWF has worked to help people and nature thrive. </p>
+<p>As the world's leading conservation organization, </p>
+<p>WWF works in nearly 100 countries. At every level,</p>
+ <p><we collaborate with people around the world to develop and deliver innovative solutions that protect communities, </p>
+<p> wildlife, and the places in which they live.</p>
+</blockquote>
+
+
+
+
+<footer>
+    <p style="color:red;">명지전문대 813반</p> 
+</footer>
+
+</body>
+</html>
