@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid02</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item header">A</div>
+      <div class="item main-content">B</div>
+      <div class="item sidebar-a">C</div>
+      <div class="item sidebar-b">D</div>
+      <div class="item footer">E</div>
+    </div>
+    <div class="container">
+      <div class="item">A1</div>
+      <div class="item">B1</div>
+      <div class="item">C1</div>
+      <div class="item selectChild">D1</div>
+      <div class="item">E1</div>
+      <div class="item">F1</div>
+      <div class="item">G1</div>
+    </div>
+  </body>
+</html>
+<style>
+  .footer {
+    grid-area: footer;
+    place-self: center center;
+    vertical-align: middle;
+  }
+  .sidebar-b {
+    grid-area: right;
+    text-align: center;
+  }
+
+  .sidebar-a {
+    grid-area: left;
+    text-align: center;
+  }
+  .header {
+    grid-area: header;
+    place-self: center center;
+    vertical-align: middle;
+  }
+  .main-content {
+    grid-area: main;
+    place-self: center center;
+    text-align: bottom;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "header header header"
+      "left   main   right"
+      "footer footer footer";
+    gap: 222px;
+    align-content: center;
+    align-items: stretch;
+
+  }
+
+  div {
+    border: 1px solid black;
+  }
+</style>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex2</title>
+
+    <style>
+      .header_container{
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+}
+
+
+      .header_item {
+        flex: none;
+        display: flex;
+        justify-content: space-between;
+        padding: 5px;
+       
+      }
+
+      .header_item div{
+        margin: 3px;
+      }
+
+     
+      /* main */
+      .flex_container {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+      }
+
+      .main_item1 {
+        border: 1px solid black;
+        width: 150px; /* 좌측 메뉴 고정 폭 */
+        border-right: 1px solid black;
+        padding: 10px;
+      }
+
+      .main_item2 {
+        flex: 1; /* 메인 콘텐츠가 나머지 전부 */
+        padding: 10px;
+        overflow-y: auto;
+         flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* footer */
+      .footer_container {
+        border: 1px solid black;
+        margin-top: auto;
+        flex-shrink: 0;
+      }
+
+      .footer_item {
+        padding: 12px;
+      }
+
+      .total_container div, .total_container span{
+        border: 1px solid black;
+      }
+
+      .total_container{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      .inputcoponents{
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 10px;
+        border: none;
+      }
+
+      .main_item2 div{
+       border: none;
+       align-self: center;
+      }
+
+      .dynamic_width_container div{
+        max-width: 250px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        
+      } 
+    
+
+  .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;          /* item 사이 간격 */
+  padding: 40px 20px; /* 화면 가장자리 여백 */
+}
+
+
+.item img {
+  width: 100%;
+  height: 480px;         /* 카드 세로(높이) 통일 */
+  object-fit: cover;     /* 비율 유지 + 꽉 채우기(잘림 발생) */
+  display: block;
+  /* border: 1px solid black; */
+}
+
+.item1{
+ width: 210px;
+  
+  object-fit: cover;
+  display: block;
+  border: 1px solid black;
+  height: fit-content;
+   position: sticky;
+   padding: 15px;
+}
+ 
+
+.caption{
+  margin-top: 8px;
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.color{
+  background-color: rgb(255, 248, 238);
+}
+
+    </style>
+  </head>
+
+  <body>
+    <div class="total_container">
+      <header class="header_container">
+        <div class="header_item">
+          <div class="logo">이재현의 좋아하는 작품 모음</div>
+          <div class="search">대우 능력 개발원 포트폴리오</div>
+          <div class="gnb">2025-12-22</div>
+        </div>
+        <div class="header_item">
+            <div>작가: 클로드 모네</div>
+          <div class="logo">생년 월일: 1840년 11월 14일</div>
+          <div>출생지: 프랑스 제3공화국 지베르니</div>
+          <div>사망: 1926년 12월 5일 (향년 86세)</div>
+        </div>
+      </header>
+
+      <main class="flex_container">
+        <div class="item1 color"><img src="image/99.jpg" alt="그림99" /> 클로드 모네 작품의 특징은 빛과 색채의 순간적 인상을 포착하기 위해 '연작(Series)' 기법을 사용하고, 거칠고 짧은 붓 터치로 형태를 흐릿하게 표현하며, 광학적 혼합을 통해 생생한 시각적 효과를 만들어낸다는 점입니다. 특히 같은 대상을 시간, 날씨, 계절에 따라 다르게 그리며 빛의 변화와 자연의 움직임을 탐구한 것이 핵심이며, 수련 연작, 건초더미 연작, 루앙 성당 연작 등이 대표적입니다. </div>
+        
+        <div class="main_item2">
+          <div class="main_item3" style="overflow-y: scroll">
+            <div style="display:flex; justify-content:center; align-items:center;">
+
+           
+            </div>
+            
+          <div class="gallery">
+    <div class="item"><img src="image/1.jpg" alt="그림1" /> <div class="caption">〈양산을 든 여인 - 카미유와 장〉
+</div></div>
+    <div class="item"><img src="image/2.jpg" alt="그림2" /> <div class="caption">〈인상, 해돋이〉</div></div>
+    <div class="item"><img src="image/3.jpg" alt="그림3" /> <div class="caption">〈양산을 든 여인〉</div></div>
+    <div class="item"><img src="image/4.jpg" alt="그림4" /> <div class="caption">〈퓌이라베의 절벽 위 산책〉</div></div>
+    <div class="item"><img src="image/5.jpg" alt="그림5" /> <div class="caption">〈아르장퇴유의 센 강〉</div></div>
+    <div class="item"><img src="image/6.jpg" alt="그림6" /> <div class="caption">〈양산을 든 여인 (바람 속의 여인)〉</div></div>
+    <div class="item"><img src="image/7.jpg" alt="그림7" /> <div class="caption">〈수련〉</div></div>
+    <div class="item"><img src="image/8.jpg" alt="그림8" /> <div class="caption">〈수련 연못 – 빛의 반사〉</div></div>
+    <div class="item"><img src="image/9.jpg" alt="그림9" /> <div class="caption">〈풍차가 있는 풍경〉</div></div>
+    <div class="item"><img src="image/10.jpg" alt="그림10" /> <div class="caption">〈아르장퇴유의 센 강과 꽃밭〉</div></div>
+    <div class="item"><img src="image/11.jpg" alt="그림11" /> <div class="caption">〈양산을 든 여인 (읽고 있는 여인)〉</div></div>
+    <div class="item"><img src="image/12.jpg" alt="그림12" /> <div class="caption">〈지베르니의 정원〉</div></div>
+    <div class="item"><img src="image/13.jpg" alt="그림13" /> <div class="caption">〈남프랑스의 산과 바다〉</div></div>
+    <div class="item"><img src="image/14.jpg" alt="그림14" /> <div class="caption">〈강가 산책로와 강 위의 돛단배〉</div></div>
+          </div>
+
+
+      </main>
+
+      <footer class="footer_container">
+        <div class="footer_item"> <a href="https://namu.wiki/w/%ED%81%B4%EB%A1%9C%EB%93%9C%20%EB%AA%A8%EB%84%A4">클로드 모네 기타 정보</a></div>
+      </footer>
+    </div>
+  </body>
+</html>

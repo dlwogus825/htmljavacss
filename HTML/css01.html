@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">헤더영역 스크롤 내려도 고정</div>
+    <div class="cls1" button123>  asdf</div>
+    <div class="cls3" exampleABC title="example">  div3</div>
+    <div class="cls1 highlight"> p1
+        <div class="div">div</div>
+        <div class="div2">div2</div>
+        <div class="div3">div3</div>
+        <div class="div4">div4</div>
+        
+
+        <ul>
+            <li>안녕하세요
+            </li>
+        </ul>
+
+
+
+        <button class="btn1">버튼1</button>
+        <button class="btn2">버튼2</button>
+        <button class="btn3">버튼3</button>
+
+
+    </div>
+
+    <div class="a">A</div>
+<div class="b">B</div>
+
+<p>첫 번째 문장</p>
+<p>두 번째 문장</p>
+<p>세 번째 문장</p>
+
+
+    <p>
+  이것은 <span style="color:red;">빨간 글자</span>이고
+  이것은 <span style="color:blue;">파란 글자</span>입니다.
+</p>
+
+<div style="border:2px solid black;">A</div>
+
+<div style="border:2px solid red; visibility:visible;">
+  B (hidden)
+</div>
+
+<div style="border:2px solid black;">C</div>
+
+<div style="
+  width: 200px;
+  height: 100px;
+  border: 2px solid black;
+  overflow: scroll;
+">
+  안에 내용이 많으면<br>
+  스크롤이 생깁니다<br>
+  이렇게요<br>
+  계속 내려가요<br>
+  더 내려가요<br>
+  아직 있어요<br>
+  끝!
+</div>
+
+
+
+
+</body> 
+</html>
+
+<style>
+.b {
+  display: none;
+}
+
+
+    .cls1, .cls2, .cls3 {
+        color: red;
+    
+    }
+ .cls1, .cls2, .cls3 {
+        color: blue;
+    
+    }
+
+     .highlight {
+        font-weight: 900;
+    }
+
+.btn1 {
+    border-color: red;
+    margin: 10px;
+    border-style: solid;
+    border-width: 2px;
+    background-color: lightgray;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+
+.div{
+    border-style: double;
+    padding: 50px;
+    width: 200px;
+}
+
+.div3{
+   position: absolute;
+    margin: 10px 30px 40px 50px;
+    box-sizing: content-box;
+    width: 200px;
+    padding: auto;
+    border-style: double;
+    right: 100px;
+}
+
+.div4{
+  position: relative;
+  left: 100px;          /* 10px 말고 크게 */
+  top: 30px;            /* 위아래도 같이 */
+  width: 200px;
+  border: 3px solid red;
+  background: #ffecec;
+}
+.header {
+  position: sticky;
+  top: 0;
+  background: yellow;
+}
+
+
+
+</style>

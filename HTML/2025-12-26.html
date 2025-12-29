@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반응형 페이지</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <div class="title">테니스 페이지</div>
+
+        <div class="fusion">
+          <div class="headermenu headermenui">
+            <img
+              src="image/2.svg"
+              width="100%"
+              style="fill: white"
+              width="20px"
+              height="20px"
+            />
+            <div><input type="text" placeholder="찾을 단어 검색"></div>
+          </div>
+          <div class="headermenu headermenui">
+            <img
+              src="image/6.svg"
+              width="100%"
+              style="fill: white"
+              width="20px"
+              height="20px"
+            />
+            <span class="menu-text">로그인하기</span>
+          
+        </div>
+
+        <div class="headermenu headermenui flexspacebetween">
+            <img
+              src="image/5.svg"
+              width="100%"
+              style="fill: white"
+              width="20px"
+              height="20px"
+            /><span class="menu-text">장바구니</span>
+          </div>
+
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="heading">테니스 하는 사람</section>
+      <p class="headingtext">
+        테니스는 굉장히 좋은 스포츠 입니다. 테니스는 라켓으로 공을 쳐서 네트
+        너머 코트로 넘기며 점수를 겨루는 스포츠입니다. 1대1로 하는 단식, 2대2로
+        하는 복식이 있으며, 전 세계적으로 매우 인기 있는 종목입니다.
+      </p>
+
+      <section class="content">
+        <picture class="picture">
+          <img src="image/tennis.jpg" width="100%" />
+        </picture>
+      </section>
+    </main>
+
+    <footer class="footer">made by 2025 12 26, 이재현</footer>
+  </body>
+</html>
+
+<style>
+  .heading {
+    font-style: oblique;
+    font-size: 45px;
+  }
+  .header {
+    border: 1px solid black;
+
+    background-color: rgb(128, 128, 128);
+  }
+
+  .title {
+    border: 1px solid black;
+    align-items: center;
+    color: aliceblue;
+    margin: 20px;
+    padding: 8px 12px;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .main {
+    margin: 10px;
+    min-height: 400px;
+    text-align: center;
+    background-color: lightgray;
+    font-size: 20px;
+    border: 1px solid black;
+  }
+  .footer {
+    height: 100px;
+    background-color: gray;
+    font-size: 20px;
+    border: 1px solid black;
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  .headermenu {
+    border: 1px solid black;
+    color: aliceblue;
+    padding: 8px 12px;
+    
+  }
+  .fusion {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 10px;
+  }
+
+  .headingtext {
+    font-size: 15px;
+    max-width: 90%;
+    text-align: center;
+    margin: 10px auto;
+  }
+  .content {
+    width: 100%;
+    margin: auto auto;
+    text-align: center;
+  }
+
+  .picture img {
+    max-width: 50%;
+  }
+
+  #my body {
+    margin: 2px 2px;
+  }
+
+  .headermenui {
+    cursor: pointer;
+  }
+
+  
+
+  /*데탑일때*/
+  @media (max-width: 1024px) {
+    
+    .menu-text {
+        display: none;
+    }
+   
+
+    
+  }
+
+  
+  
+</style>
