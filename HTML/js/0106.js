@@ -16,20 +16,20 @@ class Study0106 {
     for ( let n = 0; n < this.#array01.length; n++ ) {
       // 모든 원소중에서 baseNum의 배수 값을 console.log 에 출력한다.
       printOk("for", this.#array01[n], baseNum);
-      // if ( this.#array01[n] % baseNum === 0 ) {
-      //   console.log(`${baseNum}의 배수, test01 for : ${this.#array01[n]}`);
-      // }
-      // // 3항 연산자 : (조건) ? 참일때실행 : 거짓일때실행;
-      // ( this.#array01[n] % baseNum === 0 ) ? console.log(`${baseNum}의 배수, test01 for : ${this.#array01[n]}`) : {};
+      if ( this.#array01[n] % baseNum === 0 ) {
+        console.log(`${baseNum}의 배수, test01 for : ${this.#array01[n]}`);
+      }
+      // 3항 연산자 : (조건) ? 참일때실행 : 거짓일때실행;
+      ( this.#array01[n] % baseNum === 0 ) ? console.log(`${baseNum}의 배수, test01 for : ${this.#array01[n]}`) : {};
     }
     for ( const num of this.#array01 ) {
       // 모든 원소중에서 baseNum의 배수 값을 console.log 에 출력한다.
       printOk("for of", num, baseNum);
-      // if ( num % baseNum === 0 ) {
-      //   console.log(`${baseNum}의 배수, test01 of : ${num}`);
-      // }
-      // // 3항 연산자 : (조건) ? 참일때실행 : 거짓일때실행;
-      // ( num % baseNum === 0 ) ? console.log(`${baseNum}의 배수, test01 of : ${num}`) : {};
+      if ( num % baseNum === 0 ) {
+        console.log(`${baseNum}의 배수, test01 of : ${num}`);
+      }
+      // 3항 연산자 : (조건) ? 참일때실행 : 거짓일때실행;
+      ( num % baseNum === 0 ) ? console.log(`${baseNum}의 배수, test01 of : ${num}`) : {};
     }
     this.#array01.forEach(function(arrayItem, ndx, arr) {
       // 모든 원소중에서 baseNum의 배수 값을 console.log 에 출력한다.
@@ -129,9 +129,7 @@ class Study0106 {
 
 
 let exam = new Study0106();
-// 문제 1
-// array01 배열의 모든 원소를 순환하는 for, for of, forEach 3개를 구현한다.
-// 모든 원소중에서 짝수값을 console.log 에 출력한다.
+
 exam.test01(2);
 
 // 문제 2
