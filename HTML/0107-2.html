@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>학생 정보 관리</title>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- JS 연결 -->
+  <script src="0107-2.js" defer></script>
+
+  <style>
+    .border {
+      border: 1px solid black;
+      padding: 5px;
+      background-color: rgb(255, 253, 210);
+    }
+
+    fieldset {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      display: flex;
+    }
+
+    li > div {
+      width: 100px;
+      text-align: center;
+    }
+
+    .dataLi {
+      margin-top: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>jQuery를 이용한 동적 화면</h1>
+  </header>
+
+  <main>
+    <!-- 입력 영역 -->
+    <section>
+      <fieldset>
+        <legend>학생정보</legend>
+
+        <div>
+          <label>ID : </label>
+          <input type="number" id="id" />
+        </div>
+
+        <div>
+          <label>Name : </label>
+          <input type="text" id="name" />
+        </div>
+
+        <div>
+          <label>KOR : </label>
+          <input type="number" id="kor" />
+        </div>
+
+        <div>
+          <label>ENG : </label>
+          <input type="number" id="eng" />
+        </div>
+
+        <div>
+          <label>MAT : </label>
+          <input type="number" id="mat" />
+        </div>
+
+        <div>
+          <label>CLASS : </label>
+          <input type="text" id="clss" />
+        </div>
+
+        <button id="btnAddStudent" type="button">Add</button>
+
+      </fieldset>
+    </section>
+
+    <!-- 리스트 영역 -->
+    <section>
+      <ul id="ulList">
+        <li>
+          <div class="border">ID</div>
+          <div class="border">Name</div>
+          <div class="border">KOR</div>
+          <div class="border">ENG</div>
+          <div class="border">MAT</div>
+          <div class="border">CLASS</div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    made by CWC.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./js/0107.js" async></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <h1>안녕 세계야</h1>
+
+    <header>
+      <h1 class="header">DOM 조작</h1>
+    </header>
+    <main>
+      <div id="content">
+        <ul id="list" class="bgcolordarkblue">
+          <li>공부준비</li>
+          <li>공부시작</li>
+          <li>쉬는시간</li>
+        </ul>
+      </div>
+      <p class="hello">안녕</p>
+      <p class="hello">안녕</p>
+      <p class="hello">안녕</p>
+      <p class="hello">안녕</p>
+
+
+      <button class="test-btn">버튼</button>
+
+      <script>
+        $(".hello").css("color", "red");
+        $(".footer1").css("color", "green");
+        $(".header").css("color", "pink");
+        $('.hello').html('바보');
+       $('.test-btn').on('click', function(){
+    $('.hello').slideUp();
+  });
+        
+      </script>
+    </main>
+
+    <footer>
+      <div class="footer1">made by CWC. 2026-01-07</div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .bgcolorred {
+    background-color: rgb(255, 63, 63);
+  }
+
+  .bgcolordarkblue {
+    background-color: rgb(68, 0, 255);
+  }
+  .colorWhile {
+    color: white;
+  }
+  .colorBlack {
+    color: black;
+  }
+</style>
