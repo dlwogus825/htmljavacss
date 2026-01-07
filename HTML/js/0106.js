@@ -47,6 +47,7 @@ class Study0106 {
   }
 
   testMap() {
+    console.log("testMap");
     let newArray = this.#array01.map(function(x, index, array) {
       console.log(`testMap : ${x}, ${index}, [${array}]`)
       return x * 10;
@@ -67,67 +68,69 @@ class Study0106 {
       return {value:item.value, index:item.index, vip:`${item.value}${item.index}`}/*새로운배열은 [{value:5, index:0, vip:"50"}, {value:2, index:1, vip:"21"}, {value:3,index:2,vip:"32"}...{value:552,index:11,vip:"55211"}...]*/;
     });
     console.log(newArray3);
-     newArray3 = [{"value":5,"index":0,"vip":"50"},{"value":2,"index":1,"vip":"21"},{"value":3,"index":2,"vip":"32"},{"value":8,"index":3,"vip":"83"},{"value":2,"index":4,"vip":"24"},{"value":1,"index":5,"vip":"15"},{"value":8,"index":6,"vip":"86"},{"value":9,"index":7,"vip":"97"},{"value":11,"index":8,"vip":"118"},{"value":17,"index":9,"vip":"179"},{"value":20,"index":10,"vip":"2010"},{"value":552,"index":11,"vip":"55211"},{"value":281,"index":12,"vip":"28112"},{"value":3,"index":13,"vip":"313"},{"value":91,"index":14,"vip":"9114"}];
-    
-    
+    // newArray3 = [{"value":5,"index":0,"vip":"50"},{"value":2,"index":1,"vip":"21"},{"value":3,"index":2,"vip":"32"},{"value":8,"index":3,"vip":"83"},{"value":2,"index":4,"vip":"24"},{"value":1,"index":5,"vip":"15"},{"value":8,"index":6,"vip":"86"},{"value":9,"index":7,"vip":"97"},{"value":11,"index":8,"vip":"118"},{"value":17,"index":9,"vip":"179"},{"value":20,"index":10,"vip":"2010"},{"value":552,"index":11,"vip":"55211"},{"value":281,"index":12,"vip":"28112"},{"value":3,"index":13,"vip":"313"},{"value":91,"index":14,"vip":"9114"}];
     let newArray4 = newArray3.map((item, index, array) => {
-      return item.vip;
+      // return item.vip;
     });
-
-    newArray4.sort();
-
-
+    // newArray4.sort();
     console.log(newArray4);
-
-
-
   }
-
-   testFilter() {
-    console.log("testFilter");
-   // array01 = [5, 2, 3, 8, 2, 1, 8, 9, 11, 17, 20, 552, 281, 3, 91];
-    let newArray1 = this.#array01.filter((item, index, array) => {
-      // 새로운배열은 길이가 3글자 이상인 원소만 가지고 있으세요. 100 이상 => [552, 281]
-      return (item > 100);
-    });
-    console.log(newArray1);
-  }
-
-
 
   testFilter() {
     console.log("testFilter");
-   // array01 = [5, 2, 3, 8, 2, 1, 8, 9, 11, 17, 20, 552, 281, 3, 91];
+    //#array01 = [5, 2, 3, 8, 2, 1, 8, 9, 11, 17, 20, 552, 281, 3, 91];
     let newArray1 = this.#array01.filter((item, index, array) => {
       // 새로운배열은 길이가 3글자 이상인 원소만 가지고 있으세요. 100 이상 => [552, 281]
-      return (item < 10);
+      return false;
+      // 새로운배열은 길이가 1글자인 원소만 가지고 있으세요. 10 미만 => [5, 2, 3, 8, ... 3]
     });
-    console.log(newArray1);
-
-
-
-
     console.log(newArray1);
 
     let localArray3 = [{"value":5,"index":0},{"value":2,"index":1},{"value":3,"index":2},{"value":8,"index":3},{"value":2,"index":4},{"value":1,"index":5},{"value":8,"index":6},{"value":9,"index":7},{"value":11,"index":8},{"value":17,"index":9},{"value":20,"index":10},{"value":552,"index":11},{"value":281,"index":12},{"value":3,"index":13},{"value":91,"index":14}];
     let localArray4 = localArray3.filter((node, ndx, arr) => {
       // 새로운배열은 value 와 index 의 차값(value - index)이 20 이하인 값만 원소로 가지고 있으세요.
-      let a = 0
-      return (((node.value - ndx) <= 20));
+      return false;
     });
-     console.log(localArray4);
-
   }
 
+  testReduce() {
+    console.log("testReduce");
+    //#array01 = [5, 2, 3, 8, 2, 1, 8, 9, 11, 17, 20, 552, 281, 3, 91];
+    let sum = this.#array01.reduce( (result, item, index, array) => {
+      console.log(`${result} + ${item} = ${result + item}`);
+      return result + item;
+    }, 0 );
+    console.log(`sum = ${sum}`);
 
-  
+    let sum2 = this.#array01.reduce( (result, item, index, array) => {
+      // item 원소의 값이 짝수인 것만 합을 구하세요.avg
+      if(item % 2 === 0) {
+      console.log(`${result} + ${item} = ${result + item}`);
+      return result + item;
+      }
 
+
+      return result;
+      
+    }, 0 );
+    console.log(`sum2 = ${sum2}`);
+
+    let avg = this.#array01.reduce( (result, item, index, array) => {
+      // array01 의 평균값을 구하세요.
+       console.log(`${result} + ${item} = ${result + item}`);
+       return result + item / this.#array01.length ;
+    }, 0 );
+    console.log(`avg = ${avg}`);
+
+    let localArray = ["I", "am", "a", "Teacher", ", hello", "world", "!"];
+    let newWord = localArray.reduce( (result, item, index, array) => {
+      // item 원소의 단어를 순서대로 모두 이용하여 문장을 완성하세요
+
+      
+    }, 0 );
+    console.log(`newWord = ${newWord}`);
+  }
 }
-
-
-
-
-
 let exam = new Study0106();
 
 exam.test01(2);
@@ -141,6 +144,15 @@ exam.testMap();
 
 exam.print();
 
-
+console.log({'value':5,'index':0,'vip':'50'}); // => 키:값, 키:값 JSON(JavaScript Object Nation)
+class TTT {
+  value = 5;
+  index = 0;
+  vip = "50";
+}
+let t = new TTT();
+console.log(t);
 
 exam.testFilter();
+
+exam.testReduce();

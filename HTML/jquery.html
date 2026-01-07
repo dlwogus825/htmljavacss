@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="app">
+        <header id="header" class="header">
+            <h1>제목</h1>
+            <nav>
+                <a href="#" class="nav-link active">홈</a>
+                <a href="#" class="nav-link">소개</a>
+                <a href="#" class="nav-link">연락처</a>
+            </nav>
+        </header>
+        <main id="container">
+            <article class="item" data-id="1" data-category="tech">
+                <h2>기술 기사</h2>
+                <p class="content">내용...</p>
+            </article>
+            <article class="item" data-id="2" data-category="news">
+                <h2>뉴스 기사</h2>
+                <p class="content">내용...</p>
+            </article>
+            <article class="item" data-id="3" data-category="culture">
+                <h2>문화 기사</h2>
+                <p class="content">내용...</p>
+            </article>
+        </main>
+    </div>
+    
+    <script>
+        // getElementById - ID로 단일 요소 선택
+        const header = document.getElementById('header');
+        console.log(header); // <div id="header">...</div>
+        
+        // getElementsByClassName - 클래스로 여러 요소 선택
+        const items = document.getElementsByClassName('nav-link');
+        console.log(items); // HTMLCollection [<a class="nav-link">, ...]
+        console.log(items.length); // 개수
+        
+        // getElementsByTagName - 태그명으로 여러 요소 선택
+        const paragraphs = document.getElementsByTagName('p');
+        console.log(paragraphs); // HTMLCollection [<p>, <p>, ...]
+        
+        // querySelector - CSS 선택자로 첫 번째 요소 선택 (권장!)
+        const firstItem = document.querySelector('.nav-link');
+        console.log(firstItem);
+        const nestedElement = document.querySelector('#container > .item:first-child');
+        console.log(nestedElement);
+        const inputElement = document.querySelector('input[type="text"]');
+        console.log(inputElement);
+        
+        // querySelectorAll - CSS 선택자로 모든 요소 선택 (권장!)
+        const allItems = document.querySelectorAll('.item');
+        console.log(allItems); // NodeList [<article class="item">, ...]
+        
+        // NodeList vs HTMLCollection
+        // NodeList - forEach 사용 가능
+        console.log('NodeList');
+        allItems.forEach(item => {
+            console.log(item.textContent);
+        });
+        
+        // HTMLCollection - forEach 불가, Array로 변환 필요
+        console.log('HTMLCollection');
+        Array.from(items).forEach(item => {
+            console.log(item.textContent);
+        });
+        
+        // 고급 선택자 예제
+        const examples = document.querySelectorAll(`
+            .container .item,
+            #special-item,
+            [data-status="active"],
+            input:not([disabled]),
+            li:nth-child(odd)
+        `);
+
+
+        // ID 선택, #표시
+        const app = document.getElementById('app');
+        console.log(app);
+        
+        // 클래스 선택, .표시
+        const navLinks = document.querySelectorAll('.nav-link');
+        console.log(navLinks);
+        
+        // 복합 선택자
+        const activeLink = document.querySelector('.nav-link.active');
+        console.log(activeLink);
+        
+        // 속성 선택자
+        const techArticle = document.querySelector('[data-category="tech"]');
+        console.log(techArticle);
+        
+        // 자식/자손 선택자
+        const headerTitle = document.querySelector('#app > header > h1');
+        console.log(headerTitle);
+        const allParagraphs = document.querySelectorAll('#app p');
+        console.log(allParagraphs);
+        
+        // 가상 클래스
+        const firstArticle = document.querySelector('article:first-child');
+        console.log(firstArticle);
+        const evenArticles = document.querySelectorAll('article:nth-child(even)');
+        console.log(evenArticles);
+        
+        // 특정 요소 내에서 검색
+        const mainElement = document.querySelector('main');
+        console.log(mainElement);
+        const articlesInMain = mainElement.querySelectorAll('article');
+        console.log(articlesInMain);
+
+
+    </script>
+</body>
+</html>

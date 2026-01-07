@@ -1,4 +1,4 @@
-class ArrayTest {
+class DOMControlTest {
   #users = [
     {
       id: 1,
@@ -24,22 +24,7 @@ class ArrayTest {
       scores: [88, 92, 78],
       role: "user",
     },
-    {
-      id: 4,
-      name: "최지연",
-      age: 22,
-      active: true,
-      scores: [95, 88, 91],
-      role: "moderator",
-    },
-    {
-      id: 5,
-      name: "정우성",
-      age: 45,
-      active: false,
-      scores: [60, 65, 70],
-      role: "user",
-    },
+   
   ];
 
   testFor() {
