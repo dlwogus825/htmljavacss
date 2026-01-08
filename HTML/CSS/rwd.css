@@ -1,0 +1,114 @@
+/* =========================
+    기본 변수 설정 (모바일 기준)
+========================= */
+:root {
+  --main-color: #4caf50;
+  --container-width: 90%;
+  --title-size: 22px;
+  --text-size: 16px;
+}
+
+/* =========================
+    기본 스타일 (모바일 퍼스트)
+========================= */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: var(--text-size);
+  line-height: 1.6;
+}
+
+.header { 
+  background: var(--main-color);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.hero {
+  width: var(--container-width);
+  margin: 20px auto;
+  text-align: center;
+}
+
+h2 {
+  font-size: var(--title-size);
+}
+
+.cards {
+  width: var(--container-width);
+  margin: 20px auto;
+}
+
+.card {
+  background: #eee;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.card:hover {
+  background: #ddd;
+}
+
+.image-area {
+  width: var(--container-width);
+  margin: 20px auto 40px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+/* =========================
+    태블릿 (min-width: 600px)
+========================= */
+@media (min-width: 600px) {
+  :root {
+    --container-width: 85%;
+    --title-size: 26px;
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  .card {
+    width: 40%;
+    text-align: center;
+  }
+}
+
+/* =========================
+    데스크탑 (min-width: 1024px)
+========================= */
+@media (min-width: 1024px) {
+  :root {
+    --container-width: 70%;
+    --title-size: 30px;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .card {
+    width: auto;
+    text-align: center;
+    padding: 30px;
+    font-size: 18px;
+  }
+}

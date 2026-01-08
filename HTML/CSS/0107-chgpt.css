@@ -1,0 +1,131 @@
+/* =====================
+   기본 설정 (Mobile)
+===================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header,
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #333;
+  color: #fff;
+}
+
+main {
+  padding: 10px;
+}
+
+/* =====================
+   입력 섹션
+===================== */
+#inputSection fieldset {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+#inputSection fieldset > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+#inputSection label {
+  font-weight: bold;
+}
+
+#inputSection input {
+  padding: 6px;
+}
+
+/* 모바일: 입력박스 6행 (1열) */
+#inputSection fieldset {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* =====================
+   목록 섹션
+===================== */
+#listSection fieldset {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+/* 제목 줄 */
+.titleDiv {
+  display: none; /* 모바일에서는 숨김 */
+}
+
+/* 카드 컨테이너 */
+#ulList {
+  display: grid;
+  grid-template-columns: 1fr; /* 모바일: 6행 */
+  gap: 10px;
+}
+
+/* 카드 스타일 */
+.dataLi {
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  padding: 10px;
+  background: #f9f9f9;
+}
+
+.dataLi > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
+}
+
+.dataLi > div::before {
+  font-weight: bold;
+  color: #555;
+}
+
+/* 각 항목 라벨 */
+.dataLi > div:nth-child(1)::before { content: "ID"; }
+.dataLi > div:nth-child(2)::before { content: "NAME"; }
+.dataLi > div:nth-child(3)::before { content: "KOR"; }
+.dataLi > div:nth-child(4)::before { content: "ENG"; }
+.dataLi > div:nth-child(5)::before { content: "MAT"; }
+.dataLi > div:nth-child(6)::before { content: "CLASS"; }
+
+/* =====================
+   Laptop (768px 이상)
+===================== */
+@media (min-width: 768px) {
+  /* 입력박스: 3행 (2열) */
+  #inputSection fieldset {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  /* 목록 데이터: 2행 (3열) */
+  #ulList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =====================
+   PC (1200px 이상)
+===================== */
+@media (min-width: 1200px) {
+  /* 입력박스: 2행 (3열) */
+  #inputSection fieldset {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* 목록 데이터: 3행 (2열) */
+  #ulList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

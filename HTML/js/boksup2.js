@@ -82,3 +82,37 @@ exam.test01(2);
 
 //new는 객체를 생성하고 메모리를 할당시켜서 데이터를 저장할 수 있도록 만들며 그리고 생성자를 호출시켜서
 //객체를 초기화 시키고 그렇게 해서 생성된 객체의 메모리 주소를 변환해 변수에 할당시킨다
+
+
+const numbers = [1, 2, 3, 4, 5];
+
+// 인덱스 0 위치에 인덱스 3부터의 요소를 복사
+numbers.copyWithin(0,1);
+console.log(numbers); // [4, 5, 3, 4, 5]
+
+const arr = [1, 2, 3, 4, 5];
+// 인덱스 2 위치에 인덱스 0부터 2 전까지의 요소를 복사
+arr.copyWithin(3, 0, 2);
+console.log(arr); // [1, 2, 1, 2, 5]
+
+const fruits = ['사과', '바나나', '오렌지', '포도'];
+
+const removed = fruits.splice(1, 2); // 인덱스 1부터 2개 제거
+console.log(fruits);  // ['사과', '포도']
+console.log(removed); // ['바나나', '오렌지']// 요소 추가 
+
+const reversed = numbers.reverse();
+console.log(numbers);
+console.log(reversed);
+
+
+const fruits1 = ['사과', '바나나', '오렌지', '포도'];
+
+const newFruits = fruits1.toSpliced(1, 2, '딸기', '수박');
+console.log(fruits1);    // ['사과', '바나나', '오렌지', '포도'] (원본 유지)
+console.log(newFruits); // ['사과', '딸기', '수박', '포도'] (새 배열)
+
+//to spliced를 이용하면 기존 배열에서 할당한 새 배열로 배치된다.
+
+const fruits2 = ['사과', '바나나', '오렌지'];
+
