@@ -61,3 +61,4 @@ document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('load', function() {
     console.log(document.readyState + ' 모든 리소스(폰트, 이미지, 아이콘 등등)가 로드 되었습니다!');
 });
+
